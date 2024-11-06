@@ -16,8 +16,7 @@ Play Bad Apple!! (or any other video file) in [Google Calendar](https://calendar
     - Every .css file
     - unnamed.png
     - unnamed_*[something]*.png
-7. *Aquire* a copy of Bad Apple!! from [The Internet Archive](https://archive.org/details/TouhouBadApple). Oh wait, it's offline... \
-¯\\_(ツ)_/¯
+7. *Aquire* a copy of the Bad Apple!! MP4 from [The Internet Archive](https://archive.org/details/TouhouBadApple)
 8. Insert the following code at the top of `index.html`:
 ```html
 <script src="/badapple.js"></script>
