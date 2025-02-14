@@ -10,21 +10,21 @@ Play Bad Apple!! (or any other video file) in [Google Calendar](https://calendar
 2. Install additional pip packages by running `pip install -r requirements.txt`.
 3. Log into [Google Calendar](https://calendar.google.com/), select *year* in the top-right corner or press [Y] on your keyboard.
 4. right-click anywhere on the page and select *Save Page as...*
-5. Navigate to the path, where you downloaded this repo in and save it as "index.html".
-6. A folder called "index_files" will be created along with the file. You can delete all of its contents, except:
+5. Navigate to the path, where you downloaded this repo, and save the page as "index.html".
+6. A folder called "index_files" will be created along with the html-file. You can delete all of its contents, except:
     - calendar_*[something]*.png
     - Every .css file
     - unnamed.png
     - unnamed_*[something]*.png
-7. *Aquire* a copy of the Bad Apple!! MP4 from [The Internet Archive](https://archive.org/details/TouhouBadApple)
-8. Insert the following code at the top of `index.html`:
+9. Download Bad Apple as an MP4 from [The Internet Archive](https://archive.org/details/TouhouBadApple).
+10. Insert the following code at the top of `index.html`:
 ```html
 <script src="/badapple.js"></script>
 ```
 9. Run `python3 main.py --video-path [path to bad apple]`.
 10. Open http://localhost:8000/ in a web browser.
-11. Open the developer console (method varies per browser) and switch to the console tab.
-12. Ignore all the warnings and type `init()`. If you did everything right, all the days should light up blue.
+11. Open the browser's developer console and switch to the *Console* tab.
+12. Ignore all the warnings and enter `init()`. If you did everything right, all the days should light up blue.
 13. Now type `run()`. A preview window should open and the days in the calendar should start changing to the video.
 
 > [!TIP]
@@ -32,7 +32,7 @@ Play Bad Apple!! (or any other video file) in [Google Calendar](https://calendar
 
 ## How it works
 
-The main.py script start a Flask and a WebSocket server. The Flask server serves the `index.html` file, `badapple.js` and the `index_files` folder.
+The main.py script starts a Flask and a WebSocket server. The Flask server serves the `index.html` file, `badapple.js` and the `index_files` folder.
 The WebSocket server waits for a connection from the hosted webpage and then sends all the frames of the video as strings of ones and zeroes.
 
 `badapple.js` is responsible for the web browser side.
@@ -42,4 +42,4 @@ And when `run()` is executed, the script establishes a connection to the Python 
 ## TODO
 - Add audio playback to main.py
 - Compress the data sent to the browser
-- Make the days RGB (fancy)
+- Make the days RGB/Grayscale (fancy)
